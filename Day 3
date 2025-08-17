@@ -24,3 +24,4 @@ public class FindDuplicate {
         System.out.println("Duplicate number: " + findDuplicate(arr));
     }
 }
+
