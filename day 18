@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class DivisorCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        
+        int count = 0;
+        
+        // Find divisors
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                // i is a divisor
+                count++;
+                
+                // Avoid double counting the square root
+                if (i != n / i) {
+                    count++;
+                }
+            }
+        }
+        
+        // Output
+        System.out.println("Total divisors: " + count);
+        
+        System.out.print("Divisors are: ");
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
